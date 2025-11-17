@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ecf2fb;
+    color: #525151;
+
+}
+
+header {
+    background-color: white;
+    color: #333;
+    height: 100px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    line-height: 1.6;
+
+}
+
+header h2,
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sec-container {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+}
+
+/* Container non assigné */
+.unassigned-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.unassigned-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+#unassigned-counter {
+    height: 35px;
+    width: 35px;
+    background-color: #dbeafe;
+    color: #1e40af;
+    padding: 12px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-worker-btn {
+    width: 100%;
+    background: linear-gradient(to right, #10b981, #059669);
+    color: white;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-worker-btn:hover {
+    background: linear-gradient(to right, #059669, #047857);
+}
+
+/* info workers */
+
+#worker-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#worker-card {
+    background: linear-gradient(to right, #f9fafb, white);
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#worker-card:hover {
+    border-color: #60a5fa;
+}
+
+#worker-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#worker-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #bfdbfe;
+}
+
+#worker-details {
+    line-height: 1.6;
+}
+
+#worker-name {
+    font-weight: 500;
+    color: #1f2937;
+    font-size: 0.9em;
+
+}
+
+#worker-role {
+    font-size: 0.9em;
+    color: #2563eb;
+}
+
+.etape-container {
+    display: grid;
+    gap: 15px;
+}
+
+/* Titre */
+.titre-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    line-height: 1.6;
+
+}
+
+.titre-container p {
+    justify-content: left;
+}
+
+/* Container des salles */
+.room-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* Cartes de salle */
+.room-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+
+.room-card.white:hover {
+    border: 1px solid #1d4ed8;
+}
+
+.room-card.red {
+    background-color: #fef2f2;
+    border: 1px solid #ff9f9f;
+}
+
+.room-card.red:hover {
+    border: 1px solid #fd0000;
+
+}
+
+.room-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.room-info {
+    flex: 1;
+}
+
+.room-title {
+    font-size: 1rem;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+.room-capacity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.users-icon {
+    width: 15px;
+    height: 15px;
+    color: #9ca3af;
+
+}
+
+.add-to-room-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #3b82f6, #1d4ed8);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-to-room-btn:hover {
+    background: linear-gradient(to right, #1d4ed8, #1e40af);
+}
+
+.room-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-room {
+    color: #9ca3af;
+    text-align: center;
+}
+
+/* remove worker btn */
+.delete-btn {
+    
+    width: 28px;
+    height: 28px;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(0.8);
+}
+
+.worker-card:hover .delete-btn {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.delete-btn:hover {
+    background-color: #dc2626;
+}
+
+.delete-btn i {
+    width: 14px;
+    height: 14px;
+}

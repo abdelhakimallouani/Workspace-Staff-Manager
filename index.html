@@ -1,11 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Workspace Staff Manager</title>
 </head>
+
 <body>
-    
+
+    <header>
+        <h2>WorkSphere</h2>
+        <p>Employee Management System</p>
+    </header>
+
+    <section id="sec-container">
+        <div class="unassigned-container">
+            <div class="unassigned-header">
+                <h3 class="section-title">Personnel Non Assigné</h3>
+                <p id="unassigned-counter">0</p>
+            </div>
+            <button class="add-worker-btn">
+                <span>+</span>Ajouter un Employé
+            </button>
+            <div id="worker-list">
+                <!-- Carte employé  -->
+                <div id="worker-card">
+                    <div id="worker-info">
+                        <img src="https://imgs.search.brave.com/MutCmWprRJhvwooXzf95Ibceit4Sqa_HHjHmXR_t71g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjMv/NjEwLzE5MS9zbWFs/bC9wcmV0dHktd29t/YW4taW4taGF0Z3Jh/cGhlci1ob2JieS1s/aWZlc3R5bGUtc3Vt/bWVyLW5hdHVyZS1w/aG90by5qcGc"
+                            alt="qdsfgh" id="worker-avatar">
+                        <div id="worker-details">
+                            <h3 id="worker-name">allouani</h3>
+                            <p id="worker-role">respensable</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="etape-container">
+            <div class="titre-container">
+                <h3>Plan d'Étage</h3>
+                <p>Gérer les affectations des employés dans les différentes salles</p>
+            </div>
+
+            <div class="room-container">
+                <!-- Salle de Conférence -->
+                <div class="room-card white">
+                    <div class="room-header">
+                        <div class="room-info">
+                            <h3 class="room-title">Salle de Conférence</h3>
+                            <div class="room-capacity">
+                                <span class="users-icon"><i class="fa-solid fa-users"></i></span>
+                                <span>0 / 20</span>
+                            </div>
+                        </div>
+                        <button class="add-to-room-btn">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                    <div id="worker-list">
+                        <!-- Carte employe  -->
+                        <div id="worker-card">
+                            <div id="worker-info">
+                                <img src="https://imgs.search.brave.com/MutCmWprRJhvwooXzf95Ibceit4Sqa_HHjHmXR_t71g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjMv/NjEwLzE5MS9zbWFs/bC9wcmV0dHktd29t/YW4taW4taGF0Z3Jh/cGhlci1ob2JieS1s/aWZlc3R5bGUtc3Vt/bWVyLW5hdHVyZS1w/aG90by5qcGc"
+                                    alt="qdsfgh" id="worker-avatar">
+                                <div id="worker-details">
+                                    <h3 id="worker-name">allouani</h3>
+                                    <p id="worker-role">respensable</p>
+                                </div>
+                                <button class="delete-btn">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Réception -->
+                <div class="room-card red">
+                    <div class="room-header">
+                        <div class="room-info">
+                            <h3 class="room-title">Réception</h3>
+                            <div class="room-capacity">
+                                <span class="users-icon"><i class="fa-solid fa-users"></i></span>
+                                <span>0 / 2</span>
+                            </div>
+                        </div>
+                        <button class="add-to-room-btn">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="room-content">
+                        <div class="empty-room">Aucun employé assigné</div>
+                    </div>
+                </div>
+
+                <!-- Salle des Serveurs -->
+                <div class="room-card red">
+                    <div class="room-header">
+                        <div class="room-info">
+                            <h3 class="room-title">Salle des Serveurs</h3>
+                            <div class="room-capacity">
+                                <span class="users-icon"><i class="fa-solid fa-users"></i></span>
+                                <span>0 / 3</span>
+                            </div>
+                        </div>
+                        <button class="add-to-room-btn">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="room-content">
+                        <div class="empty-room">Aucun employé assigné</div>
+                    </div>
+                </div>
+
+                <!-- Salle de Sécurité -->
+                <div class="room-card red">
+                    <div class="room-header">
+                        <div class="room-info">
+                            <h3 class="room-title">Salle de Sécurité</h3>
+                            <div class="room-capacity">
+                                <span class="users-icon"><i class="fa-solid fa-users"></i></span>
+                                <span>0 / 4</span>
+                            </div>
+                        </div>
+                        <button class="add-to-room-btn">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+
+                    <div class="room-content">
+                        <div class="empty-room">Aucun employé assigné</div>
+                    </div>
+                </div>
+
+                <!-- Salle du Personnel -->
+                <div class="room-card white">
+                    <div class="room-header">
+                        <div class="room-info">
+                            <h3 class="room-title">Salle du Personnel</h3>
+                            <div class="room-capacity">
+                                <span class="users-icon"><i class="fa-solid fa-users"></i></span>
+                                <span>0 / 15</span>
+                            </div>
+                        </div>
+                        <button class="add-to-room-btn">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="room-content">
+                        <div class="empty-room">Aucun employé assigné</div>
+                    </div>
+                </div>
+
+                <!-- Salle des Archives -->
+                <div class="room-card red">
+                    <div class="room-header">
+                        <div class="room-info">
+                            <h3 class="room-title">Salle des Archives</h3>
+                            <div class="room-capacity">
+                                <span class="users-icon"><i class="fa-solid fa-users"></i></span>
+                                <span>0 / 2</span>
+                            </div>
+                        </div>
+                        <button class="add-to-room-btn">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="room-content">
+                        <div class="empty-room">Aucun employé assigné</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+    </section>
+
+    <script src="main_js.js"></script>
 </body>
+
 </html>
