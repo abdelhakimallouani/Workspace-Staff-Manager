@@ -101,6 +101,9 @@ p {
     border-radius: 12px;
     padding: 5px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #worker-card:hover {
@@ -280,4 +283,7 @@ p {
 .delete-btn i {
     width: 14px;
     height: 14px;
+}
+.room-worker-info{
+    display: flex;
 }
