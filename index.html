@@ -21,14 +21,14 @@
     <section id="sec-container">
         <div class="unassigned-container">
             <div class="unassigned-header">
-                <h3 class="section-title">Personnel Non Assigné</h3>
+                <h3 class="section-title">Personnel Non Assigne</h3>
                 <p id="unassigned-counter">0</p>
             </div>
-            <button class="add-worker-btn">
-                <span>+</span>Ajouter un Employé
+            <button id="add-worker-btn">
+                <span>+ </span> Ajouter un Employe
             </button>
             <div id="worker-list">
-                <!-- Carte employé  -->
+                <!-- Carte employe  -->
                 <div id="worker-card">
                     <div id="worker-info">
                         <img src="https://imgs.search.brave.com/MutCmWprRJhvwooXzf95Ibceit4Sqa_HHjHmXR_t71g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjMv/NjEwLzE5MS9zbWFs/bC9wcmV0dHktd29t/YW4taW4taGF0Z3Jh/cGhlci1ob2JieS1s/aWZlc3R5bGUtc3Vt/bWVyLW5hdHVyZS1w/aG90by5qcGc"
@@ -43,16 +43,16 @@
         </div>
         <div class="etape-container">
             <div class="titre-container">
-                <h3>Plan d'Étage</h3>
-                <p>Gérer les affectations des employés dans les différentes salles</p>
+                <h3>Plan d'etage</h3>
+                <p>Gerer les affectations des employes dans les differentes salles</p>
             </div>
 
             <div class="room-container">
-                <!-- Salle de Conférence -->
+                <!-- Salle de Conference -->
                 <div class="room-card white">
                     <div class="room-header">
                         <div class="room-info">
-                            <h3 class="room-title">Salle de Conférence</h3>
+                            <h3 class="room-title">Salle de Conference</h3>
                             <div class="room-capacity">
                                 <span class="users-icon"><i class="fa-solid fa-users"></i></span>
                                 <span>0 / 20</span>
@@ -76,17 +76,17 @@
                             <button class="delete-btn">
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
-                            
+
                         </div>
                     </div>
                 </div>
 
 
-                <!-- Réception -->
+                <!-- Reception -->
                 <div class="room-card red">
                     <div class="room-header">
                         <div class="room-info">
-                            <h3 class="room-title">Réception</h3>
+                            <h3 class="room-title">Reception</h3>
                             <div class="room-capacity">
                                 <span class="users-icon"><i class="fa-solid fa-users"></i></span>
                                 <span>0 / 2</span>
@@ -97,7 +97,7 @@
                         </button>
                     </div>
                     <div class="room-content">
-                        <div class="empty-room">Aucun employé assigné</div>
+                        <div class="empty-room">Aucun employe assigne</div>
                     </div>
                 </div>
 
@@ -116,15 +116,15 @@
                         </button>
                     </div>
                     <div class="room-content">
-                        <div class="empty-room">Aucun employé assigné</div>
+                        <div class="empty-room">Aucun employe assigne</div>
                     </div>
                 </div>
 
-                <!-- Salle de Sécurité -->
+                <!-- Salle de Securite -->
                 <div class="room-card red">
                     <div class="room-header">
                         <div class="room-info">
-                            <h3 class="room-title">Salle de Sécurité</h3>
+                            <h3 class="room-title">Salle de Securite</h3>
                             <div class="room-capacity">
                                 <span class="users-icon"><i class="fa-solid fa-users"></i></span>
                                 <span>0 / 4</span>
@@ -136,7 +136,7 @@
                     </div>
 
                     <div class="room-content">
-                        <div class="empty-room">Aucun employé assigné</div>
+                        <div class="empty-room">Aucun employe assigne</div>
                     </div>
                 </div>
 
@@ -155,7 +155,7 @@
                         </button>
                     </div>
                     <div class="room-content">
-                        <div class="empty-room">Aucun employé assigné</div>
+                        <div class="empty-room">Aucun employe assigne</div>
                     </div>
                 </div>
 
@@ -174,15 +174,91 @@
                         </button>
                     </div>
                     <div class="room-content">
-                        <div class="empty-room">Aucun employé assigné</div>
+                        <div class="empty-room">Aucun employe assigne</div>
                     </div>
                 </div>
             </div>
         </div>
-
-        </div>
-
     </section>
+
+    <div class="modal" id="addEmployeeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Ajouter un nouvel employé</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullname" class="required">Nom et prénom</label>
+                        <input type="text" id="fullname" placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="role" class="required">Role</label>
+                        <select id="role">
+                            <option>Receptionist</option>
+                            <option>Designer</option>
+                            <option>Developer</option>
+                            <option>Analyst</option>
+                            <option>Manager</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="photoUrl">URL de la photo</label>
+                    <input type="text" id="photoUrl" placeholder="https://example.com/photo.jpg">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email" class="required">Email</label>
+                        <input type="email" id="email" placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="required">Phone</label>
+                        <input type="tel" id="phone" placeholder="0650....">
+                    </div>
+                </div>
+
+                <h3 class="section-title">Expérience professionnelle</h3>
+
+                <div class="experience-container" id="experienceContainer">
+                </div>
+
+                <div class="form-container">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Entreprise</label>
+                            <input type="text" id="company" placeholder="Company name">
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position</label>
+                            <input type="text" id="position" placeholder="Job title">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startDate">Date de début</label>
+                            <input type="date" id="startDate" placeholder="jj/mm/aaaa">
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">Date de fin</label>
+                            <input type="date" id="endDate" placeholder="jj/mm/aaaa">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="add-experience" id="addExperienceBtn">
+                    <i class="fas fa-plus"></i> Ajouter de l'expérience
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelBtn">Annuler</button>
+                <button class="btn btn-success" id="addWorkerBtn">Ajouter un employé</button>
+            </div>
+        </div>
+    </div>
 
     <script src="main_js.js"></script>
 </body>
