@@ -76,7 +76,6 @@
                             <button class="delete-btn">
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
-
                         </div>
                     </div>
                 </div>
@@ -181,16 +180,17 @@
         </div>
     </section>
 
+    <!-- modal d'ajoute un employee -->
     <div class="modal" id="addEmployeeModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Ajouter un nouvel employé</h2>
+                <h2 class="modal-title">Ajouter un nouvel employe</h2>
                 <button class="close-btn" id="closeModal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="fullname" class="required">Nom et prénom</label>
+                        <label for="fullname" class="required">Nom et prenom</label>
                         <input type="text" id="fullname" placeholder="John Doe">
                     </div>
                     <div class="form-group">
@@ -221,7 +221,7 @@
                     </div>
                 </div>
 
-                <h3 class="section-title">Expérience professionnelle</h3>
+                <h3 class="section-title">Experience professionnelle</h3>
 
                 <div class="experience-container" id="experienceContainer">
                 </div>
@@ -239,7 +239,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="startDate">Date de début</label>
+                            <label for="startDate">Date de debut</label>
                             <input type="date" id="startDate" placeholder="jj/mm/aaaa">
                         </div>
                         <div class="form-group">
@@ -250,12 +250,48 @@
                 </div>
 
                 <button class="add-experience" id="addExperienceBtn">
-                    <i class="fas fa-plus"></i> Ajouter de l'expérience
+                    <i class="fas fa-plus"></i> Ajouter de l'experience
                 </button>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-outline" id="cancelBtn">Annuler</button>
-                <button class="btn btn-success" id="addWorkerBtn">Ajouter un employé</button>
+                <button class="btn btn-success" id="addWorkerBtn">Ajouter un employe</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pour afficher les informations -->
+    <div class="modal" id="employeeInfoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Profil de l'employe</h2>
+                <button class="close-btn" id="closeInfoModal">x</button>
+            </div>
+            <div class="modal-body">
+                <div class="employee-profile">
+                    <img id="info-avatar" src="" alt="Photo de l'employe" class="employee-avatar-large">
+                    <h2 id="info-name" class="employee-name"></h2>
+                    <p id="info-role" class="employee-role"></p>
+                    <div class="employee-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span id="info-email"></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span id="info-phone"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-experience-section">
+                    <h3 class="section-title">Experience professionnelle</h3>
+                    <div class="work-experience-list" id="info-experience">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="closeInfoBtn">Fermer</button>
             </div>
         </div>
     </div>

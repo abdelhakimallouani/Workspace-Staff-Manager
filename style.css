@@ -527,3 +527,62 @@ select:focus {
 .room-worker-info {
     display: flex;
 }
+
+
+/* Modal d'affichage des informations employé */
+.employee-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.employee-avatar-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #bfdbfe;
+    margin-bottom: 15px;
+}
+
+.employee-name {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.employee-role {
+    font-size: 18px;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.employee-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item i {
+    width: 20px;
+    color: #3498db;
+}
+
+.work-experience-section {
+    width: 100%;
+}
+
+.work-experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
