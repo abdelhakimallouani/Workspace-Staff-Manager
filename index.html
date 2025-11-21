@@ -28,7 +28,7 @@
                 <span>+ </span> Ajouter un Employe
             </button>
             <div id="worker-list">
-                <!-- Carte de cgaque employe  -->
+                <!-- Carte de chaque employe -->
             </div>
         </div>
         <div class="etape-container">
@@ -39,130 +39,121 @@
 
             <div class="room-container">
                 <!-- Salle de Conference -->
-                <div class="room-card white">
+                <div class="room-card white" data-room-id="conference" data-capacity="20" data-restricted-roles=""
+                    data-required="false">
                     <div class="room-header">
                         <div class="room-info">
                             <h3 class="room-title">Salle de Conference</h3>
                             <div class="room-capacity">
                                 <span class="users-icon"><i class="fa-solid fa-users"></i></span>
-                                <span>0 / 20</span>
+                                <span class="room-counter">0 / 20</span>
                             </div>
                         </div>
                         <button class="add-to-room-btn">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
-                    <div id="worker-list">
-                        <!-- Carte employe  -->
-                        <div class="worker-card">
-                            <div id="worker-info">
-                                <img src="https://imgs.search.brave.com/MutCmWprRJhvwooXzf95Ibceit4Sqa_HHjHmXR_t71g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjMv/NjEwLzE5MS9zbWFs/bC9wcmV0dHktd29t/YW4taW4taGF0Z3Jh/cGhlci1ob2JieS1s/aWZlc3R5bGUtc3Vt/bWVyLW5hdHVyZS1w/aG90by5qcGc"
-                                    alt="qdsfgh" id="worker-avatar">
-                                <div id="worker-details">
-                                    <h3 id="worker-name">allouani</h3>
-                                    <p id="worker-role">respensable</p>
-                                </div>
-                            </div>
-                            <button class="delete-btn">
-                                <i class="fa-solid fa-xmark"></i>
-                            </button>
-                        </div>
+                    <div class="room-workers-list">
+                        <!-- Les employes assignes à cette salle seront ajoutes ici -->
                     </div>
                 </div>
 
-
                 <!-- Reception -->
-                <div class="room-card red">
+                <div class="room-card red" data-room-id="reception" data-capacity="2"
+                    data-restricted-roles="Receptionist" data-required="true">
                     <div class="room-header">
                         <div class="room-info">
                             <h3 class="room-title">Reception</h3>
                             <div class="room-capacity">
                                 <span class="users-icon"><i class="fa-solid fa-users"></i></span>
-                                <span>0 / 2</span>
+                                <span class="room-counter">0 / 2</span>
                             </div>
                         </div>
                         <button class="add-to-room-btn">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
-                    <div class="room-content">
+                    <div class="room-workers-list">
                         <div class="empty-room">Aucun employe assigne</div>
                     </div>
                 </div>
 
                 <!-- Salle des Serveurs -->
-                <div class="room-card red">
+                <div class="room-card red" data-room-id="server" data-capacity="3" data-restricted-roles="Technician"
+                    data-required="true">
                     <div class="room-header">
                         <div class="room-info">
                             <h3 class="room-title">Salle des Serveurs</h3>
                             <div class="room-capacity">
                                 <span class="users-icon"><i class="fa-solid fa-users"></i></span>
-                                <span>0 / 3</span>
+                                <span class="room-counter">0 / 3</span>
                             </div>
                         </div>
                         <button class="add-to-room-btn">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
-                    <div class="room-content">
+                    <div class="room-workers-list">
                         <div class="empty-room">Aucun employe assigne</div>
                     </div>
                 </div>
 
                 <!-- Salle de Securite -->
-                <div class="room-card red">
+                <div class="room-card red" data-room-id="security" data-capacity="4" data-restricted-roles="Security"
+                    data-required="true">
                     <div class="room-header">
                         <div class="room-info">
                             <h3 class="room-title">Salle de Securite</h3>
                             <div class="room-capacity">
                                 <span class="users-icon"><i class="fa-solid fa-users"></i></span>
-                                <span>0 / 4</span>
+                                <span class="room-counter">0 / 4</span>
                             </div>
                         </div>
                         <button class="add-to-room-btn">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
-
-                    <div class="room-content">
+                    <div class="room-workers-list">
                         <div class="empty-room">Aucun employe assigne</div>
                     </div>
                 </div>
 
                 <!-- Salle du Personnel -->
-                <div class="room-card white">
+                <div class="room-card white" data-room-id="staff" data-capacity="15" data-restricted-roles=""
+                    data-required="false">
                     <div class="room-header">
                         <div class="room-info">
                             <h3 class="room-title">Salle du Personnel</h3>
                             <div class="room-capacity">
                                 <span class="users-icon"><i class="fa-solid fa-users"></i></span>
-                                <span>0 / 15</span>
+                                <span class="room-counter">0 / 15</span>
                             </div>
                         </div>
                         <button class="add-to-room-btn">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
-                    <div class="room-content">
+                    <div class="room-workers-list">
                         <div class="empty-room">Aucun employe assigne</div>
                     </div>
                 </div>
 
                 <!-- Salle des Archives -->
-                <div class="room-card red">
+                <div class="room-card red" data-room-id="archives" data-capacity="2" data-restricted-roles="Cleaning"
+                    data-required="true">
                     <div class="room-header">
                         <div class="room-info">
                             <h3 class="room-title">Salle des Archives</h3>
                             <div class="room-capacity">
                                 <span class="users-icon"><i class="fa-solid fa-users"></i></span>
-                                <span>0 / 2</span>
+                                <span class="room-counter">0 / 2</span>
                             </div>
                         </div>
                         <button class="add-to-room-btn">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
-                    <div class="room-content">
+                    <div class="room-workers-list">
                         <div class="empty-room">Aucun employe assigne</div>
                     </div>
                 </div>
@@ -175,39 +166,48 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title">Ajouter un nouvel employe</h2>
-                <button class="close-btn" id="closeModal">&times;</button>
+                <button class="close-btn" id="closeModal">X</button>
             </div>
             <div class="modal-body">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="fullname" class="required">Nom et prenom</label>
                         <input type="text" id="fullname" placeholder="John Doe">
+                        <span class="error-message" id="fullname-error"></span>
                     </div>
                     <div class="form-group">
                         <label for="role" class="required">Role</label>
                         <select id="role">
-                            <option>Receptionist</option>
-                            <option>Designer</option>
-                            <option>Developer</option>
-                            <option>Analyst</option>
-                            <option>Manager</option>
+                            <option value="">Selectionnez un role</option>
+                            <option value="Receptionist">Receptionist</option>
+                            <option value="Designer">Designer</option>
+                            <option value="Developer">Developer</option>
+                            <option value="Analyst">Analyst</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Technician">Technician</option>
+                            <option value="Security">Security</option>
+                            <option value="Cleaning">Cleaning</option>
                         </select>
+                        <span class="error-message" id="role-error"></span>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="photoUrl">URL de la photo</label>
                     <input type="text" id="photoUrl" placeholder="https://example.com/photo.jpg">
+                    <span class="error-message" id="photoUrl-error"></span>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="email" class="required">Email</label>
                         <input type="email" id="email" placeholder="john@example.com">
+                        <span class="error-message" id="email-error"></span>
                     </div>
                     <div class="form-group">
-                        <label for="phone" class="required">Phone</label>
-                        <input type="tel" id="phone" placeholder="0650....">
+                        <label for="phone" class="required">Telephone</label>
+                        <input type="tel" id="phone" placeholder="+33 1 23 45 67 89">
+                        <span class="error-message" id="phone-error"></span>
                     </div>
                 </div>
 
@@ -230,11 +230,11 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="startDate">Date de debut</label>
-                            <input type="date" id="startDate" placeholder="jj/mm/aaaa">
+                            <input type="date" id="startDate">
                         </div>
                         <div class="form-group">
                             <label for="endDate">Date de fin</label>
-                            <input type="date" id="endDate" placeholder="jj/mm/aaaa">
+                            <input type="date" id="endDate">
                         </div>
                     </div>
                 </div>
@@ -255,7 +255,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title">Profil de l'employe</h2>
-                <button class="close-btn" id="closeInfoModal">x</button>
+                <button class="close-btn" id="closeInfoModal">X</button>
             </div>
             <div class="modal-body">
                 <div class="employee-profile">
@@ -271,6 +271,10 @@
                             <i class="fas fa-phone"></i>
                             <span id="info-phone"></span>
                         </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="info-location">Non assigne</span>
+                        </div>
                     </div>
                 </div>
 
@@ -282,6 +286,24 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-outline" id="closeInfoBtn">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de selection d'employe pour une salle -->
+    <div class="modal employee-selection-modal" id="employeeSelectionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="selectionModalTitle">Assigner un employe</h2>
+                <button class="close-btn" id="closeSelectionModal">X</button>
+            </div>
+            <div class="modal-body">
+                <p id="selectionModalDescription">Selectionnez un employe à assigner à cette salle :</p>
+                <div class="employee-selection-list" id="employeeSelectionList">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelSelectionBtn">Annuler</button>
             </div>
         </div>
     </div>
