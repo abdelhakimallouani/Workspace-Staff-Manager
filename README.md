@@ -72,12 +72,8 @@ WorkSphere est une application web développée pour l'entreprise WorkSphere per
 
 ## 📁 Structure du Projet
 
-Workspace-Staff-Manager/
-│
-├── index.html          # Page principale
-├── style.css           # Styles CSS
-├── main_jsjs          # Logique JavaScript
-├── README.md           # Documentation
+<img width="933" height="191" alt="image" src="https://github.com/user-attachments/assets/c4d5f8cc-d148-48f9-ad9c-1434666478ca" />
+
 
 
 ## 🎨 Design Responsive
