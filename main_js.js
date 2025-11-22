@@ -3,18 +3,18 @@ let nextEmployeeId = 1;
 let currentRoomForAssignment = null;
 
 const REGEX = {
-    fullname: /^[a-zA-ZÀ-ÿ\s'-]{2,50}$/,
+    fullname: /^[a-zA-Za-ÿ\s'-]{2,50}$/,
     email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
     phone: /^(?:(?:\+|00)212|0)[5-7][\s.-]*\d{2}[\s.-]*\d{2}[\s.-]*\d{2}[\s.-]*\d{2}$/,
     photoUrl: /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp|avif))$/i
 };
 
 const ERROR_MESSAGES = {
-    fullname: "Le nom doit contenir entre 2 et 50 caractères (lettres, espaces, apostrophes et traits d'union uniquement)",
+    fullname: "Le nom doit contenir entre 2 et 50 caracteres",
     email: "Veuillez entrer une adresse email valide",
-    phone: "Veuillez entrer un numéro de téléphone français valide (ex: +33 1 23 45 67 89 ou 01 23 45 67 89)",
+    phone: "Veuillez entrer un numero de telephone valide (ex: +212 23 45 67 89 ou 06 23 45 67 89)",
     photoUrl: "Veuillez entrer une URL d'image valide (png, jpg, jpeg, gif, webp)",
-    role: "Veuillez sélectionner un rôle",
+    role: "Veuillez selectionner un rôle",
     required: "Ce champ est obligatoire"
 };
 
@@ -77,25 +77,25 @@ function getRestrictionMessage(employeeRole, roomId) {
     switch (roomId) {
         case 'reception':
             if (employeeRole !== 'Receptionist') {
-                return 'Seuls les Réceptionnistes peuvent être assignés à la Réception';
+                return 'Seuls les Receptionnistes peuvent etre assignes a la Reception';
             }
             break;
 
         case 'server':
             if (employeeRole !== 'Technician') {
-                return 'Seuls les Techniciens IT peuvent être assignés à la Salle des Serveurs';
+                return 'Seuls les Techniciens IT peuvent etre assignes a la Salle des Serveurs';
             }
             break;
 
         case 'security':
             if (employeeRole !== 'Security') {
-                return 'Seuls les Agents de sécurité peuvent être assignés à la Salle de Sécurité';
+                return 'Seuls les Agents de securite peuvent etre assignes a la Salle de Securite';
             }
             break;
 
         case 'archives':
             if (employeeRole === 'Cleaning') {
-                return 'Le personnel de Nettoyage ne peut pas être assigné à la Salle des Archives';
+                return 'Le personnel de Nettoyage ne peut pas etre assigne a la Salle des Archives';
             }
             break;
     }
@@ -291,7 +291,7 @@ function openEmployeeInfoModal(employeeId) {
             locationElement.textContent = roomElement.querySelector('.room-title').textContent;
         }
     } else {
-        locationElement.textContent = 'Non assigné';
+        locationElement.textContent = 'Non assigne';
     }
 
     const experienceList = document.getElementById('info-experience');
@@ -323,7 +323,7 @@ function changeUnassignedlist() {
     const unassignedEmployees = employees.filter(emp => !emp.assignedRoom);
 
     if (unassignedEmployees.length === 0) {
-        workerList.innerHTML = '<p class="empty-room">Aucun employé non assigné</p>';
+        workerList.innerHTML = '<p class="empty-room">Aucun employe non assigne</p>';
         return;
     }
 
@@ -361,7 +361,7 @@ function changeUnassignedcontor() {
 }
 
 function deleteEmployee(employeeId) {
-    if (confirm('Êtes-vous sûr de vouloir supprimer cet employé ?')) {
+    if (confirm('etes-vous sur de vouloir supprimer cet employe ?')) {
         employees = employees.filter(emp => emp.id !== employeeId);
         changeUnassignedlist();
         changeUnassignedcontor();
@@ -449,9 +449,9 @@ function openEmployeeSelectionModal(roomElement) {
     const capacity = parseInt(roomElement.getAttribute('data-capacity'));
 
     document.getElementById('selectionModalTitle').textContent =
-        `Assigner à ${roomElement.querySelector('.room-title').textContent}`;
+        `Assigner a ${roomElement.querySelector('.room-title').textContent}`;
     document.getElementById('selectionModalDescription').textContent =
-        `Sélectionnez un employé à assigner à cette salle :`;
+        `Selectionnez un employe a assigner a cette salle :`;
 
     const selectionList = document.getElementById('employeeSelectionList');
     selectionList.innerHTML = '';
@@ -459,7 +459,7 @@ function openEmployeeSelectionModal(roomElement) {
     const unassignedEmployees = employees.filter(emp => !emp.assignedRoom);
 
     if (unassignedEmployees.length === 0) {
-        selectionList.innerHTML = '<p class="empty-room">Aucun employé disponible</p>';
+        selectionList.innerHTML = '<p class="empty-room">Aucun employe disponible</p>';
     } else {
         unassignedEmployees.forEach(emp => {
             const isEligible = isEmployeeEligibleForRoom(emp, roomId);
@@ -496,7 +496,7 @@ function assignToRoom(employeeId, roomId) {
     if (employee) {
         if (!isEmployeeEligibleForRoom(employee, roomId)) {
             const restrictionMessage = getRestrictionMessage(employee.role, roomId);
-            alert(`Impossible d'assigner cet employé : ${restrictionMessage}`);
+            alert(`Impossible d'assigner cet employe : ${restrictionMessage}`);
             return;
         }
 
@@ -522,8 +522,8 @@ function validateDates(startDate, endDate) {
 }
 
 function createExperienceElement(company, position, startDate, endDate) {
-    let startDateText = startDate ? new Date(startDate).toLocaleDateString('fr-FR') : 'Non spécifiée';
-    let endDateText = endDate ? new Date(endDate).toLocaleDateString('fr-FR') : 'Non spécifiée';
+    let startDateText = startDate ? new Date(startDate).toLocaleDateString() : 'Non specifiee';
+    let endDateText = endDate ? new Date(endDate).toLocaleDateString() : 'Non specifiee';
     let dateRange = startDateText + ' - ' + endDateText;
 
     let newExperience = document.createElement('div');

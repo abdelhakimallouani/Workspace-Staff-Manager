@@ -32,7 +32,7 @@ header h2 {
     gap: 15px;
 }
 
-/* Container non assigné */
+/* Container non assigne */
 .unassigned-container {
     background: white;
     border-radius: 12px;
@@ -46,7 +46,6 @@ header h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
 }
 
 .section-title {
@@ -566,7 +565,7 @@ select:focus {
     height: 14px;
 }
 
-/* Modal d'affichage des informations employé */
+/* Modal d'affichage des informations employe */
 .employee-profile {
     display: flex;
     flex-direction: column;
@@ -624,7 +623,7 @@ select:focus {
     gap: 15px;
 }
 
-/* Modal de sélection d'employé */
+/* Modal de selection d'employe */
 .employee-selection-modal .modal-content {
     max-width: 500px;
 }
