@@ -41,7 +41,7 @@ const emailInput = document.getElementById('email');
 const phoneInput = document.getElementById('phone');
 const photoPreview = document.getElementById('photoPreview');
 
-function isEmployeeEligibleForRoom(employee, roomId, restrictedRoles) {
+function isEmployeeEligibleForRoom(employee, roomId) {
     const employeeRole = employee.role;
 
     if (employeeRole === 'Manager') {
@@ -283,16 +283,6 @@ function openEmployeeInfoModal(employeeId) {
     document.getElementById('info-role').textContent = employee.role;
     document.getElementById('info-email').textContent = employee.email;
     document.getElementById('info-phone').textContent = employee.phone;
-
-    const locationElement = document.getElementById('info-location');
-    if (employee.assignedRoom) {
-        const roomElement = document.querySelector(`[data-room-id="${employee.assignedRoom}"]`);
-        if (roomElement) {
-            locationElement.textContent = roomElement.querySelector('.room-title').textContent;
-        }
-    } else {
-        locationElement.textContent = 'Non assigne';
-    }
 
     const experienceList = document.getElementById('info-experience');
     experienceList.innerHTML = '';
