@@ -341,8 +341,12 @@ function changeUnassignedlist() {
             }
         });
 
+        workerCard.setAttribute("draggable", "true");
+    workerCard.addEventListener("dragstart", handleDragStart);
         workerList.appendChild(workerCard);
     });
+
+
 }
 
 function changeUnassignedcontor() {
@@ -413,6 +417,8 @@ function updateRoomDisplay(roomCard) {
                 }
             });
 
+            workerCard.setAttribute("draggable", "true");
+        workerCard.addEventListener("dragstart", handleDragStart);
             workersList.appendChild(workerCard);
         });
 
@@ -421,6 +427,7 @@ function updateRoomDisplay(roomCard) {
     }
 
     addButton.disabled = currentCount >= capacity;
+
 }
 
 function removeFromRoom(employeeId) {
@@ -624,13 +631,61 @@ function initialdom() {
     const addToRoomButtons = document.querySelectorAll('.add-to-room-btn');
     addToRoomButtons.forEach(button => {
         button.addEventListener('click', function () {
-            const roomCard = this.closest('.room-card');
+            const roomCard = this.closest('.room-card'); // ila derna event west fonction yemkn n3awdo this b event.target
             openEmployeeSelectionModal(roomCard);
         });
     });
 
     changeUnassignedcontor();
+    const roomCards = document.querySelectorAll('.room-card');
+roomCards.forEach(room => {
+    room.addEventListener("dragover", handleDragOver);
+    room.addEventListener("drop", handleDrop);
+});
+
     setupOutsideClick();
 }
+
+// === DRAG & DROP SYSTEM ===
+
+function handleDragStart(e) {
+    const employeeId = e.target.getAttribute("data-id");
+    e.dataTransfer.setData("employeeId", employeeId);
+    e.dataTransfer.effectAllowed = "move";
+}
+
+function handleDragOver(e) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+}
+
+function handleDrop(e) {
+    e.preventDefault();
+    const employeeId = parseInt(e.dataTransfer.getData("employeeId"));
+    const roomCard = e.currentTarget;
+    const roomId = roomCard.getAttribute("data-room-id");
+
+    const employee = employees.find(emp => emp.id === employeeId);
+    if (!employee) return;
+
+    if (!isEmployeeEligibleForRoom(employee, roomId)) {
+        alert(getRestrictionMessage(employee.role, roomId));
+        return;
+    }
+
+    const capacity = parseInt(roomCard.getAttribute("data-capacity"));
+    const employeesInRoom = employees.filter(emp => emp.assignedRoom === roomId);
+
+    if (employeesInRoom.length >= capacity) {
+        alert("Cette salle a atteint sa capacité maximale !");
+        return;
+    }
+    employee.assignedRoom = roomId;
+    changeUnassignedlist();
+    changeUnassignedcontor();
+    updateAllRooms();
+}
+
+
 
 document.addEventListener('DOMContentLoaded', initialdom);
